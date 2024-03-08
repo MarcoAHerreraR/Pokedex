@@ -36,7 +36,7 @@ Future<Pokes> pokedex() async {
     var pokes = Pokes.fromJson(data);
     return pokes;
   }else{
-    throw Exception('fallo al cargar');
+    throw Exception('fallo al cargar los pokemones');
   }
 }
 
@@ -48,7 +48,7 @@ Future<Formas.Sprites> formas(int formas) async {
     var pokes = Formas.Sprites.fromJson(data);
     return pokes;
   }else{
-    throw Exception('fallo al cargar');
+    throw Exception('fallo al cargar las imagenes');
   }
 }
 
@@ -126,15 +126,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       );});
-                      
-                       /*ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 154,
-                      itemBuilder: (BuildContext context, int index) {
-                      var poke = posts.results[index].name;
-                      return Text("${poke.toString()}    ");
-                    },
-                    )*/
                     }else if(snapshot.hasError){
                       return Center(
                         child: Text('Error;${snapshot.error}'),
